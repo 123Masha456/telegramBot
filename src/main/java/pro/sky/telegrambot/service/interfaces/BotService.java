@@ -5,4 +5,5 @@ import com.pengrad.telegrambot.model.Message;
 
 public interface BotService {
     void addTask(Message message);
+
 }

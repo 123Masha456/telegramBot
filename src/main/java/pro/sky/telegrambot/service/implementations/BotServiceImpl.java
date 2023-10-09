@@ -51,6 +51,7 @@ public class BotServiceImpl implements BotService {
     public void NotificationByTime() {
         var time = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
         var result = repository.findByDateTime(time);
+
         for (var element : result) {
             var response = new SendMessage(element.getChatId(), element.getMessage());
             telegramBot.execute(response);
