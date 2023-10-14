@@ -37,7 +37,7 @@ public class BotServiceImpl implements BotService {
             notificationTask = Parser.tryToParse(message.text());
             notificationTask.setChatId(chatId);
         } catch (Exception ex) {
-            result = new SendMessage(chatId, "Wrong format of date/time");
+            telegramBot.execute(new SendMessage(chatId, "Wrong format of date/time"));
             return;
         }
 

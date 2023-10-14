@@ -14,12 +14,11 @@ public class Parser {
         NotificationTask notificationTask = new NotificationTask();
 
         if (matcher.matches()) {
-
-            LocalDateTime localDateTime = LocalDateTime.parse(matcher.group(2),
+            LocalDateTime localDateTime = LocalDateTime.parse(matcher.group(3),
                     DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
 
             notificationTask.setDateTime(localDateTime);
-            notificationTask.setMessage(matcher.group(4));
+            notificationTask.setMessage(matcher.group(5));
 
         } else {
 
